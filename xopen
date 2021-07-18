@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# xopen - improved file opening program for Linux desktop
+# (c) abstractsun
+# License: CC0
+
+IFS=$'\n'
+
+if [[ -z "$*" ]]; then
+    echo "No file specified"
+    exit 1
+fi
+
+for file in $*; do
+    nohup xdg-open "$file" &> /dev/null & disown
+done
