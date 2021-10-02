@@ -5,11 +5,11 @@
 
 IFS=$'\n'
 
-if [[ -z "$*" ]]; then
+if [[ -z "$@" ]]; then
     echo "No file specified"
     exit 1
 fi
 
-for file in $*; do
+for file in "$@"; do
     nohup xdg-open "$file" &> /dev/null & disown
 done
