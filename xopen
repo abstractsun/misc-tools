@@ -3,6 +3,8 @@
 # (c) abstractsun
 # License: CC0
 
+set -m # Enable job control (for disown)
+
 if [[ -z "$*" ]]; then
     echo "No file specified"
     exit 1
